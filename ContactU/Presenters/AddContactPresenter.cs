@@ -25,6 +25,16 @@ namespace ContactU.Presenters
             this._contactDao = contactDao;
         }
 
-        
+        public void InitView()
+        {
+            IEnumerable<Contact> contacts = _contactDao.GetAllContacts();
+
+            foreach (Contact contact in contacts)
+            {
+                _peopleForm.AddContactToList(contact);
+            }
+        }
+
+
     }
 }

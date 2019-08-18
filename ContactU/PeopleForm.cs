@@ -31,6 +31,10 @@ namespace ContactU
             get { return p_addcontactpresenter; }
         }
 
+        public string SearchName { set => throw new NotImplementedException(); }
+
+        public Contact ContactToAdd => throw new NotImplementedException();
+
         //Generic Constructor all form to initially start up...
         public PeopleForm()
         {
@@ -56,6 +60,41 @@ namespace ContactU
         private void BtnExit_MouseLeave(object sender, EventArgs e)
         {
             btnExit.BackColor = Color.Blue;
+        }
+
+        public void AddContactToList(Contact m_contact)
+        {
+            listView1.Items.Add(m_contact.FirstName);
+            listView1.Items.Add(m_contact.LastName);
+            listView1.Items.Add(Convert.ToBase64String(m_contact.Image));
+
+        }
+
+        private void PeopleForm_Load(object sender, EventArgs e)
+        {
+            // TODO: Loads search bar with a placeholder.
+            txtBoxPeopleSearch.Text = "Enter some text here please...";
+            txtBoxPeopleSearch.ForeColor = Color.DarkGray;
+        }
+
+        // TODO: Removes placeholder from search bar.
+        private void TextBoxSearch_Leave(object sender, EventArgs e)
+        {
+            if (txtBoxPeopleSearch.Text == "")
+            {
+                txtBoxPeopleSearch.Text = "Enter some text here please...";
+
+            }
+        }
+
+        // TODO: Loads search bar with a placeholder.
+        private void TextBoxSearch_Enter(object sender, EventArgs e)
+        {
+            if (txtBoxPeopleSearch.Text == "Enter some text here please...")
+            {
+                txtBoxPeopleSearch.Text = "";
+                txtBoxPeopleSearch.ForeColor = Color.Black;
+            }
         }
     }
 }

@@ -1,6 +1,7 @@
 ﻿using ContactU.Interfaces;
 using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -18,8 +19,48 @@ namespace ContactU.Models
     
     public class ContactDao : IContactDao
     {
+        private List<Contact> c_AllContacts;
+
         //Datamapper and concrete model goes in this class...
         //private ContactDataMapper _contactDataMapper;
-        private IEnumerable<Contact> c_AllContacts;
+        //private List<Contact> c_AllContacts;
+
+        public ContactDao()
+        {
+           
+        }
+
+        //On first initialising the app get all contacts...    
+        public List<Contact> GetAllContacts()
+        {              
+            try
+            {
+                using (ContactMiidbEntities contactMiidbEntities = new ContactMiidbEntities())
+                {
+                  var c_AllContacts = contactMiidbEntities.Contacts.FirstOrDefault();
+                }
+            }
+            catch (SqlException)
+            {
+                throw;
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+            return c_AllContacts;
+        }
+
+        public Contact GetByName(string p_firstname)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void Save(Contact p_contact)
+        {
+            throw new NotImplementedException();
+        }
     }
+
+    
 }

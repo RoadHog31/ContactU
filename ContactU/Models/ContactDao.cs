@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ContactU.Interfaces;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -15,7 +16,7 @@ namespace ContactU.Models
     //Indeed, one of the most  important principles of MVC/P is that the Model 
     //should supply a mechanism to allow multiple Views to observe its data.
     
-    public class ContactDao
+    public class ContactDao : IContactDao
     {
         //Datamapper and concrete model goes in this class...
         //private ContactDataMapper _contactDataMapper;

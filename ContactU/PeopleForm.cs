@@ -25,6 +25,12 @@ namespace ContactU
         private AddContactPresenter p_addcontactpresenter;
         //private List<Contact> m_allContacts;
 
+        //Initialisation property see Program file entry point.
+        public AddContactPresenter Presenter
+        {
+            get { return p_addcontactpresenter; }
+        }
+
         //Generic Constructor all form to initially start up...
         public PeopleForm()
         {

@@ -25,7 +25,8 @@ namespace ContactU.Presenters
             this._contactDao = contactDao;
         }
 
-        public void InitView()
+        //This accesses method from ContactDao mdoel and passes to the view for binding.
+        public void InitialiseViewData()
         {
             IEnumerable<Contact> contacts = _contactDao.GetAllContacts();
 

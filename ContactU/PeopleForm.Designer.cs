@@ -56,6 +56,8 @@
             this.txtBoxPeopleSearch.Name = "txtBoxPeopleSearch";
             this.txtBoxPeopleSearch.Size = new System.Drawing.Size(330, 20);
             this.txtBoxPeopleSearch.TabIndex = 2;
+            this.txtBoxPeopleSearch.Enter += new System.EventHandler(this.TextBoxSearch_Enter);
+            this.txtBoxPeopleSearch.Leave += new System.EventHandler(this.TextBoxSearch_Leave);
             // 
             // lblContactTitle
             // 

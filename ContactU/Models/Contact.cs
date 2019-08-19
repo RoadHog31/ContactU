@@ -11,7 +11,10 @@ namespace ContactU.Models
 {
     using System;
     using System.Collections.Generic;
-    
+
+    /// <summary>
+    /// The concrete model.
+    /// </summary>
     public partial class Contact
     {
         public int ContactId { get; set; }

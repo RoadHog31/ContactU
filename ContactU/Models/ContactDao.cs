@@ -29,8 +29,9 @@ namespace ContactU.Models
         {
            
         }
+        
 
-        //On first initialising the app get all contacts...    
+        //On first initialising the app gets all contacts from EF6 context...    
         public List<Contact> GetAllContacts()
         {              
             try
@@ -39,6 +40,7 @@ namespace ContactU.Models
                 {
                   var c_AllContacts = contactMiidbEntities.Contacts.FirstOrDefault();
                 }
+                return c_AllContacts;
             }
             catch (SqlException)
             {
@@ -47,8 +49,7 @@ namespace ContactU.Models
             catch (Exception)
             {
                 throw;
-            }
-            return c_AllContacts;
+            }            
         }
 
         public Contact GetByName(string p_firstname)

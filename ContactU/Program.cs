@@ -20,6 +20,7 @@ namespace ContactU
             ContactDao contactDao = new ContactDao();
             PeopleForm peopleForm = new PeopleForm(contactDao);
             peopleForm.Width = 360;
+            peopleForm.Presenter.InitView();
             Application.Run(peopleForm);           
             
         }

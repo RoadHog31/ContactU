@@ -50,6 +50,7 @@ namespace ContactU
 
             this.p_addcontactpresenter = addContactPresenter;
             this.m_contactDao = contactDao;
+            
         }
 
         private void BtnExit_MouseEnter(object sender, EventArgs e)
@@ -62,6 +63,8 @@ namespace ContactU
             btnExit.BackColor = Color.Blue;
         }
 
+        //Takes Initialisation data from Presenter InitView Method...
+        // and passes it to the ListView control. 
         public void AddContactToList(Contact m_contact)
         {
             listView1.Items.Add(m_contact.FirstName);
@@ -75,6 +78,7 @@ namespace ContactU
             // TODO: Loads search bar with a placeholder.
             txtBoxPeopleSearch.Text = "Enter some text here please...";
             txtBoxPeopleSearch.ForeColor = Color.DarkGray;
+            
         }
 
         // TODO: Removes placeholder from search bar.

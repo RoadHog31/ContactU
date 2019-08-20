@@ -2,13 +2,7 @@
 using ContactU.Models;
 using ContactU.Presenters;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace ContactU
@@ -42,7 +36,7 @@ namespace ContactU
             InitializeComponent();
         }
 
-        //Custom Constructor
+        //Overload Constructor
         public PeopleForm(ContactDao contactDao)
         {
             InitializeComponent();
@@ -79,7 +73,16 @@ namespace ContactU
             // TODO: Loads search bar with a placeholder.
             txtBoxPeopleSearch.Text = "Enter some text here please...";
             txtBoxPeopleSearch.ForeColor = Color.DarkGray;
-            
+            this.Click += new System.EventHandler(UpdateFormTitleWithDateTime);
+
+            //Event Test...
+            //Text = "Testing!!!!" + DateTime.Now;        
+        }
+
+        //Test eventhandler - see PeopleForm_Load event.
+        private void UpdateFormTitleWithDateTime(object sender, EventArgs e)
+        {
+            Text = "Testing!!!! -" + DateTime.Now;
         }
 
         // TODO: Removes placeholder from search bar.

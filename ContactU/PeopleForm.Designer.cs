@@ -1,4 +1,6 @@
-﻿namespace ContactU
+﻿using System;
+
+namespace ContactU
 {
     partial class PeopleForm
     {
@@ -179,16 +181,18 @@
             this.Controls.Add(this.peopleTitlelbl);
             this.Controls.Add(this.panel1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "PeopleForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "People";
             this.Load += new System.EventHandler(this.PeopleForm_Load);
+            this.Click += new System.EventHandler(this.UpdateFormTitleWithDateTime);
             this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
+
+       
 
         #endregion
         private System.Windows.Forms.Label peopleTitlelbl;

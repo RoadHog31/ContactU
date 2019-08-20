@@ -31,7 +31,7 @@ namespace ContactU.Presenters
             {
                 foreach (Contact contact in contacts)
                 {
-                    _peopleForm.AddContactToList(contact);
+                    _peopleForm.AddContactToListView(contact);
                 }
             }
             else

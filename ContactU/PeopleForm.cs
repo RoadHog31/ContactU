@@ -45,7 +45,10 @@ namespace ContactU
 
             this.p_addcontactpresenter = addContactPresenter;
             this.m_contactDao = contactDao;
-            
+
+            //Event worked fine.
+            //this.Click += new System.EventHandler(UpdateFormTitleWithDateTime);
+
         }
 
         private void BtnExit_MouseEnter(object sender, EventArgs e)
@@ -60,7 +63,7 @@ namespace ContactU
 
         //Takes Initialisation data from Presenter InitView Method...
         // and passes it to the ListView control. 
-        public void AddContactToList(Contact m_contact)
+        public void AddContactToListView(Contact m_contact)
         {
             listView1.Items.Add(m_contact.FirstName);
             listView1.Items.Add(m_contact.LastName);
@@ -73,13 +76,13 @@ namespace ContactU
             // TODO: Loads search bar with a placeholder.
             txtBoxPeopleSearch.Text = "Enter some text here please...";
             txtBoxPeopleSearch.ForeColor = Color.DarkGray;
-            this.Click += new System.EventHandler(UpdateFormTitleWithDateTime);
+            //this.Click += new System.EventHandler(UpdateFormTitleWithDateTime);
 
             //Event Test...
             //Text = "Testing!!!!" + DateTime.Now;        
         }
 
-        //Test eventhandler - see PeopleForm_Load event.
+        //"raising events" Test eventhandler - see PeopleForm_Load event.
         private void UpdateFormTitleWithDateTime(object sender, EventArgs e)
         {
             Text = "Testing!!!! -" + DateTime.Now;

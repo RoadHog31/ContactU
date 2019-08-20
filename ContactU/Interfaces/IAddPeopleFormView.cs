@@ -13,6 +13,6 @@ namespace ContactU.Interfaces
 
         Contact ContactToAdd { get; }
 
-        void AddContactToList(Contact m_contact);
+        void AddContactToListView(Contact m_contact);
     }
 }

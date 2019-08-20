@@ -42,6 +42,7 @@ namespace ContactU
             this.listView1 = new System.Windows.Forms.ListView();
             this.FirstName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.LastName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.listView2 = new System.Windows.Forms.ListView();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -155,7 +156,7 @@ namespace ContactU
             this.listView1.Sorting = System.Windows.Forms.SortOrder.Ascending;
             this.listView1.TabIndex = 6;
             this.listView1.UseCompatibleStateImageBehavior = false;
-            this.listView1.View = System.Windows.Forms.View.List;
+            this.listView1.View = System.Windows.Forms.View.SmallIcon;
             // 
             // FirstName
             // 
@@ -167,12 +168,22 @@ namespace ContactU
             this.LastName.Text = "Last Name";
             this.LastName.Width = 100;
             // 
+            // listView2
+            // 
+            this.listView2.HideSelection = false;
+            this.listView2.Location = new System.Drawing.Point(106, 281);
+            this.listView2.Name = "listView2";
+            this.listView2.Size = new System.Drawing.Size(8, 8);
+            this.listView2.TabIndex = 7;
+            this.listView2.UseCompatibleStateImageBehavior = false;
+            // 
             // PeopleForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.MenuHighlight;
             this.ClientSize = new System.Drawing.Size(700, 900);
+            this.Controls.Add(this.listView2);
             this.Controls.Add(this.listView1);
             this.Controls.Add(this.btnEllipsis);
             this.Controls.Add(this.btnAddContact);
@@ -185,7 +196,6 @@ namespace ContactU
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "People";
             this.Load += new System.EventHandler(this.PeopleForm_Load);
-            this.Click += new System.EventHandler(this.UpdateFormTitleWithDateTime);
             this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -207,6 +217,7 @@ namespace ContactU
         private System.Windows.Forms.ListView listView1;
         private System.Windows.Forms.ColumnHeader FirstName;
         private System.Windows.Forms.ColumnHeader LastName;
+        private System.Windows.Forms.ListView listView2;
     }
 }
 

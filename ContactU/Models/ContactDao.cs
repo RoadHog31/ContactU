@@ -20,14 +20,13 @@ namespace ContactU.Models
     /// </summary>
     public class ContactDao : IContactDao
     {
-        private List<Contact> p_AllContacts;
-
-        //private List<Contact> c_AllContacts;
-
-        //Datamapper and concrete model goes in this class...
+        
         //private ContactDataMapper _contactDataMapper;
         //private List<Contact> c_AllContacts;
 
+        /// <summary>
+        /// Datamapper (if used) and concrete model goes in this class.
+        /// </summary>
         public ContactDao()
         {
             

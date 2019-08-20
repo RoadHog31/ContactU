@@ -12,6 +12,7 @@ namespace ContactU.Presenters
     ///The Presenters "MEDIATE" between the View and the Model, 
     ///it accepts gestures from the View and commands the Model
     ///as appropriate.
+    ///one of the most important design principle “Program to interfaces, not implementations.”
     /// </summary>
     public class AddContactPresenter
     {

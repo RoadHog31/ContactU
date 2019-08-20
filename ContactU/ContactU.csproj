@@ -56,7 +56,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Interfaces\IContactDao.cs" />
-    <Compile Include="Interfaces\IPeopleFormView.cs" />
+    <Compile Include="Interfaces\IAddPeopleFormView.cs" />
     <Compile Include="Models\Contact.cs">
       <DependentUpon>ContactUDBContext.tt</DependentUpon>
     </Compile>

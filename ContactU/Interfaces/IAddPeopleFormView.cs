@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace ContactU.Interfaces
 {
-    public interface IPeopleFormView
+    public interface IAddPeopleFormView
     {
         string SearchName { set; }
 

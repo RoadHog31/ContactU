@@ -20,7 +20,7 @@ namespace ContactU
     ///The View creates the Presenter, it lives as long as it's visible to the front 
     ///end user.
     /// </summary>
-    public partial class PeopleForm : Form, IPeopleFormView
+    public partial class PeopleForm : Form, IAddPeopleFormView
     {
         private readonly ContactDao m_contactDao;
         private AddContactPresenter p_addcontactpresenter;
@@ -85,17 +85,18 @@ namespace ContactU
         // TODO: Removes placeholder from search bar.
         private void TextBoxSearch_Leave(object sender, EventArgs e)
         {
-            if (txtBoxPeopleSearch.Text == "")
+            if (string.IsNullOrEmpty(txtBoxPeopleSearch.Text) || string.IsNullOrWhiteSpace(txtBoxPeopleSearch.Text))
             {
-                txtBoxPeopleSearch.Text = "Enter some text here please...";
+               txtBoxPeopleSearch.Text = "Enter some text here please...";
+               txtBoxPeopleSearch.ForeColor = Color.DarkGray;
 
-            }
+            }            
         }
 
         // TODO: Loads search bar with a placeholder.
         private void TextBoxSearch_Enter(object sender, EventArgs e)
         {
-            if (txtBoxPeopleSearch.Text == "Enter some text here please...")
+            if (!string.IsNullOrEmpty(txtBoxPeopleSearch.Text) || !string.IsNullOrWhiteSpace(txtBoxPeopleSearch.Text))
             {
                 txtBoxPeopleSearch.Text = "";
                 txtBoxPeopleSearch.ForeColor = Color.Black;

@@ -13,12 +13,13 @@ using System.Windows.Forms;
 
 namespace ContactU
 {
-    /*The View creates the Presenter and is "injected with the Model", 
-   * it delegates user inputs to the Presenter and observe the Model for changes 
-   * in its data.
-   * The View creates the Presenter, it lives as long as it's visible to the front 
-   * end user.*/
-
+    /// <summary>
+    /// The View creates the Presenter and is "injected with the Model", 
+    ///it delegates user inputs to the Presenter and observe the Model for changes
+    ///in its data.
+    ///The View creates the Presenter, it lives as long as it's visible to the front 
+    ///end user.
+    /// </summary>
     public partial class PeopleForm : Form, IPeopleFormView
     {
         private readonly ContactDao m_contactDao;
@@ -69,8 +70,8 @@ namespace ContactU
         {
             listView1.Items.Add(m_contact.FirstName);
             listView1.Items.Add(m_contact.LastName);
-            listView1.Items.Add(Convert.ToBase64String(m_contact.Image));
-
+            //grglistView1.Items.Add(Convert.ToBase64String(m_contact.Image));
+            
         }
 
         private void PeopleForm_Load(object sender, EventArgs e)

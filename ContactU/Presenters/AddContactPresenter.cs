@@ -8,11 +8,11 @@ using System.Threading.Tasks;
 
 namespace ContactU.Presenters
 {
-
-    /*The Presenters "MEDIATE" between the View and the Model, 
-     * it accepts gestures from the View and commands the Model 
-     * as appropriate.*/
-
+    /// <summary>
+    ///The Presenters "MEDIATE" between the View and the Model, 
+    ///it accepts gestures from the View and commands the Model
+    ///as appropriate.
+    /// </summary>
     public class AddContactPresenter
     {
         private IContactDao _contactDao;        
@@ -25,17 +25,22 @@ namespace ContactU.Presenters
             this._contactDao = contactDao;
         }
 
-        //This accesses method from ContactDao mdoel and passes to the view for binding.
+        //This accesses method from ContactDao model and passes to the view for binding.
         public void InitialiseViewData()
         {
             IEnumerable<Contact> contacts = _contactDao.GetAllContacts();
 
-            foreach (Contact contact in contacts)
+            if (contacts != null)
             {
-                _peopleForm.AddContactToList(contact);
+                foreach (Contact contact in contacts)
+                {
+                    _peopleForm.AddContactToList(contact);
+                }
             }
+            else
+            {
+                return;
+            }            
         }
-
-
     }
 }

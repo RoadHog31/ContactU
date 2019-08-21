@@ -34,16 +34,19 @@ namespace ContactU
             this.txtBoxPeopleSearch = new System.Windows.Forms.TextBox();
             this.lblContactTitle = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.btnMinimize = new System.Windows.Forms.Button();
-            this.btnMaximize = new System.Windows.Forms.Button();
-            this.btnExit = new System.Windows.Forms.Button();
-            this.btnEllipsis = new System.Windows.Forms.Button();
-            this.btnAddContact = new System.Windows.Forms.Button();
             this.listView1 = new System.Windows.Forms.ListView();
             this.FirstName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.LastName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.listView2 = new System.Windows.Forms.ListView();
+            this.btnEllipsis = new System.Windows.Forms.Button();
+            this.btnAddContact = new System.Windows.Forms.Button();
+            this.btnMinimize = new System.Windows.Forms.Button();
+            this.btnMaximize = new System.Windows.Forms.Button();
+            this.btnExit = new System.Windows.Forms.Button();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.addContact1 = new ContactU.UserControls.AddContact();
             this.panel1.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // peopleTitlelbl
@@ -87,6 +90,62 @@ namespace ContactU
             this.panel1.Size = new System.Drawing.Size(700, 66);
             this.panel1.TabIndex = 5;
             // 
+            // listView1
+            // 
+            this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.FirstName,
+            this.LastName});
+            this.listView1.HideSelection = false;
+            this.listView1.Location = new System.Drawing.Point(13, 141);
+            this.listView1.Name = "listView1";
+            this.listView1.Size = new System.Drawing.Size(330, 747);
+            this.listView1.Sorting = System.Windows.Forms.SortOrder.Ascending;
+            this.listView1.TabIndex = 6;
+            this.listView1.UseCompatibleStateImageBehavior = false;
+            this.listView1.View = System.Windows.Forms.View.SmallIcon;
+            // 
+            // FirstName
+            // 
+            this.FirstName.Text = "First Name";
+            this.FirstName.Width = 100;
+            // 
+            // LastName
+            // 
+            this.LastName.Text = "Last Name";
+            this.LastName.Width = 100;
+            // 
+            // listView2
+            // 
+            this.listView2.HideSelection = false;
+            this.listView2.Location = new System.Drawing.Point(106, 281);
+            this.listView2.Name = "listView2";
+            this.listView2.Size = new System.Drawing.Size(8, 8);
+            this.listView2.TabIndex = 7;
+            this.listView2.UseCompatibleStateImageBehavior = false;
+            // 
+            // btnEllipsis
+            // 
+            this.btnEllipsis.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEllipsis.ForeColor = System.Drawing.SystemColors.MenuHighlight;
+            this.btnEllipsis.Image = global::ContactU.Properties.Resources.icons8_more_30px;
+            this.btnEllipsis.Location = new System.Drawing.Point(301, 72);
+            this.btnEllipsis.Name = "btnEllipsis";
+            this.btnEllipsis.Size = new System.Drawing.Size(42, 36);
+            this.btnEllipsis.TabIndex = 4;
+            this.btnEllipsis.UseVisualStyleBackColor = true;
+            // 
+            // btnAddContact
+            // 
+            this.btnAddContact.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAddContact.ForeColor = System.Drawing.SystemColors.MenuHighlight;
+            this.btnAddContact.Image = global::ContactU.Properties.Resources.icons8_add_30px;
+            this.btnAddContact.Location = new System.Drawing.Point(253, 72);
+            this.btnAddContact.Name = "btnAddContact";
+            this.btnAddContact.Size = new System.Drawing.Size(42, 36);
+            this.btnAddContact.TabIndex = 4;
+            this.btnAddContact.UseVisualStyleBackColor = true;
+            this.btnAddContact.Click += new System.EventHandler(this.BtnAddContact_Click);
+            // 
             // btnMinimize
             // 
             this.btnMinimize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -122,60 +181,20 @@ namespace ContactU
             this.btnExit.MouseEnter += new System.EventHandler(this.BtnExit_MouseEnter);
             this.btnExit.MouseLeave += new System.EventHandler(this.BtnExit_MouseLeave);
             // 
-            // btnEllipsis
+            // panel2
             // 
-            this.btnEllipsis.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEllipsis.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.btnEllipsis.Image = global::ContactU.Properties.Resources.icons8_more_30px;
-            this.btnEllipsis.Location = new System.Drawing.Point(301, 72);
-            this.btnEllipsis.Name = "btnEllipsis";
-            this.btnEllipsis.Size = new System.Drawing.Size(42, 36);
-            this.btnEllipsis.TabIndex = 4;
-            this.btnEllipsis.UseVisualStyleBackColor = true;
+            this.panel2.Controls.Add(this.addContact1);
+            this.panel2.Location = new System.Drawing.Point(362, 72);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(338, 785);
+            this.panel2.TabIndex = 8;
             // 
-            // btnAddContact
+            // addContact1
             // 
-            this.btnAddContact.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAddContact.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.btnAddContact.Image = global::ContactU.Properties.Resources.icons8_add_30px;
-            this.btnAddContact.Location = new System.Drawing.Point(253, 72);
-            this.btnAddContact.Name = "btnAddContact";
-            this.btnAddContact.Size = new System.Drawing.Size(42, 36);
-            this.btnAddContact.TabIndex = 4;
-            this.btnAddContact.UseVisualStyleBackColor = true;
-            // 
-            // listView1
-            // 
-            this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.FirstName,
-            this.LastName});
-            this.listView1.HideSelection = false;
-            this.listView1.Location = new System.Drawing.Point(13, 141);
-            this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(330, 747);
-            this.listView1.Sorting = System.Windows.Forms.SortOrder.Ascending;
-            this.listView1.TabIndex = 6;
-            this.listView1.UseCompatibleStateImageBehavior = false;
-            this.listView1.View = System.Windows.Forms.View.SmallIcon;
-            // 
-            // FirstName
-            // 
-            this.FirstName.Text = "First Name";
-            this.FirstName.Width = 100;
-            // 
-            // LastName
-            // 
-            this.LastName.Text = "Last Name";
-            this.LastName.Width = 100;
-            // 
-            // listView2
-            // 
-            this.listView2.HideSelection = false;
-            this.listView2.Location = new System.Drawing.Point(106, 281);
-            this.listView2.Name = "listView2";
-            this.listView2.Size = new System.Drawing.Size(8, 8);
-            this.listView2.TabIndex = 7;
-            this.listView2.UseCompatibleStateImageBehavior = false;
+            this.addContact1.Location = new System.Drawing.Point(15, 6);
+            this.addContact1.Name = "addContact1";
+            this.addContact1.Size = new System.Drawing.Size(311, 438);
+            this.addContact1.TabIndex = 0;
             // 
             // PeopleForm
             // 
@@ -191,12 +210,15 @@ namespace ContactU
             this.Controls.Add(this.txtBoxPeopleSearch);
             this.Controls.Add(this.peopleTitlelbl);
             this.Controls.Add(this.panel1);
+            this.Controls.Add(this.panel2);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "PeopleForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "People";
             this.Load += new System.EventHandler(this.PeopleForm_Load);
             this.panel1.ResumeLayout(false);
+            this.panel2.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -218,6 +240,8 @@ namespace ContactU
         private System.Windows.Forms.ColumnHeader FirstName;
         private System.Windows.Forms.ColumnHeader LastName;
         private System.Windows.Forms.ListView listView2;
+        private System.Windows.Forms.Panel panel2;
+        private UserControls.AddContact addContact1;
     }
 }
 

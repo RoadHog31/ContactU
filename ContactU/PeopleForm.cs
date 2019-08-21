@@ -8,7 +8,7 @@ using System.Windows.Forms;
 namespace ContactU
 {
     /// <summary>
-    /// The View creates the Presenter and is "injected with the Model", 
+    /// MVP - The View creates the Presenter and is "injected with the Model", 
     ///it delegates user inputs to the Presenter and observe the Model for changes
     ///in its data.
     ///The View creates the Presenter, it lives as long as it's visible to the front 
@@ -26,9 +26,23 @@ namespace ContactU
             get { return p_addcontactpresenter; }
         }
 
-        public string SearchName { set => throw new NotImplementedException(); }
+        public string SearchName
+        {
+            set
+            {
+                txtBoxPeopleSearch.Text = value;
+            }
+        }
 
         public Contact ContactToAdd => throw new NotImplementedException();
+
+        //public Contact ContactToAdd
+        //{
+        //    get
+        //    {
+        //       new Contact() ;
+        //    }
+        //}
 
         //Generic Constructor all form to initially start up...
         public PeopleForm()
@@ -78,6 +92,9 @@ namespace ContactU
             txtBoxPeopleSearch.ForeColor = Color.DarkGray;
             //this.Click += new System.EventHandler(UpdateFormTitleWithDateTime);
 
+            addContact1.SendToBack();
+            addContact1.Hide();
+
             //Event Test...
             //Text = "Testing!!!!" + DateTime.Now;        
         }
@@ -95,7 +112,6 @@ namespace ContactU
             {
                txtBoxPeopleSearch.Text = "Enter some text here please...";
                txtBoxPeopleSearch.ForeColor = Color.DarkGray;
-
             }            
         }
 
@@ -107,6 +123,14 @@ namespace ContactU
                 txtBoxPeopleSearch.Text = "";
                 txtBoxPeopleSearch.ForeColor = Color.Black;
             }
+        }
+
+        private void BtnAddContact_Click(object sender, EventArgs e)
+        {
+            PeopleForm peopleForm = new PeopleForm();
+            peopleForm.Width = 695;
+            addContact1.BringToFront();
+            addContact1.Visible = true;            
         }
     }
 }

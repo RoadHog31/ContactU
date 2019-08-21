@@ -42,16 +42,21 @@ namespace ContactU.Models
                     var p_AllContacts = c_AllContacts;
 
                     return p_AllContacts;
-                }                
+                }
+                
             }
-            catch (SqlException)
+            catch (SqlException sqlex)
             {
-                throw;
+                throw sqlex;
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                throw;
-            }            
+                throw ex;
+            }
+            finally
+            {
+                
+            }
         }
 
         public Contact GetByName(string p_firstname)

@@ -5,7 +5,7 @@ using System.Collections.Generic;
 namespace ContactU.Presenters
 {
     /// <summary>
-    ///The Presenters "MEDIATE" between the View and the Model, 
+    ///MVP - The Presenters "MEDIATE" between the View and the Model, 
     ///it accepts gestures from the View and commands the Model
     ///as appropriate.
     ///One of the most important design principle “Program to interfaces, not implementations.”

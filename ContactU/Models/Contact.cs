@@ -23,5 +23,21 @@ namespace ContactU.Models
         public string Mobile { get; set; }
         public string Email { get; set; }
         public byte[] Image { get; set; }
+
+        public Contact()
+        {
+
+        }
+
+        public Contact(int contactId, string firstName, string lastName, string mobile, string email, byte[] image)
+        {
+            this.ContactId = contactId;
+            this.FirstName = firstName;
+            this.LastName = lastName;
+            this.Mobile = mobile;
+            this.Image = image;
+        }
+
+        
     }
 }

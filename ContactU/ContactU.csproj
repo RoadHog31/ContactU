@@ -88,6 +88,12 @@
     <Compile Include="Models\User.cs">
       <DependentUpon>ContactUDBContext.tt</DependentUpon>
     </Compile>
+    <Compile Include="UserControls\AddContact.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\AddContact.Designer.cs">
+      <DependentUpon>AddContact.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="PeopleForm.resx">
       <DependentUpon>PeopleForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -101,6 +107,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="UserControls\AddContact.resx">
+      <DependentUpon>AddContact.cs</DependentUpon>
+    </EmbeddedResource>
     <EntityDeploy Include="Models\ContactUDBContext.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>ContactUDBContext.Designer.cs</LastGenOutput>
@@ -123,7 +132,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="UserControls\" />
     <Folder Include="Views\" />
   </ItemGroup>
   <ItemGroup>

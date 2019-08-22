@@ -127,8 +127,7 @@ namespace ContactU
 
         private void BtnAddContact_Click(object sender, EventArgs e)
         {
-            PeopleForm peopleForm = new PeopleForm();
-            peopleForm.Width = 695;
+            this.Size = new System.Drawing.Size(695, 900);
             addContact1.BringToFront();
             addContact1.Visible = true;            
         }

@@ -88,6 +88,18 @@
     <Compile Include="Models\User.cs">
       <DependentUpon>ContactUDBContext.tt</DependentUpon>
     </Compile>
+    <Compile Include="UserControls\DeleteContact.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\DeleteContact.Designer.cs">
+      <DependentUpon>DeleteContact.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\EditContact.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\EditContact.Designer.cs">
+      <DependentUpon>EditContact.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\AddContact.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -107,6 +119,12 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="UserControls\DeleteContact.resx">
+      <DependentUpon>DeleteContact.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\EditContact.resx">
+      <DependentUpon>EditContact.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UserControls\AddContact.resx">
       <DependentUpon>AddContact.cs</DependentUpon>
     </EmbeddedResource>

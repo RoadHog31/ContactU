@@ -11,10 +11,7 @@ namespace ContactU.Models
 {
     using System;
     using System.Collections.Generic;
-
-    /// <summary>
-    /// The concrete model.
-    /// </summary>
+    
     public partial class Contact
     {
         public int ContactId { get; set; }
@@ -22,22 +19,5 @@ namespace ContactU.Models
         public string LastName { get; set; }
         public string Mobile { get; set; }
         public string Email { get; set; }
-        public byte[] Image { get; set; }
-
-        public Contact()
-        {
-
-        }
-
-        public Contact(int contactId, string firstName, string lastName, string mobile, string email, byte[] image)
-        {
-            this.ContactId = contactId;
-            this.FirstName = firstName;
-            this.LastName = lastName;
-            this.Mobile = mobile;
-            this.Image = image;
-        }
-
-        
     }
 }

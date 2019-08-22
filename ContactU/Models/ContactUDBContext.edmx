@@ -14,7 +14,6 @@
           <Property Name="LastName" Type="nvarchar" MaxLength="50" />
           <Property Name="Mobile" Type="varchar(max)" />
           <Property Name="Email" Type="nvarchar" MaxLength="50" />
-          <Property Name="Image" Type="image" />
         </EntityType>
         <EntityType Name="User">
           <Key>
@@ -41,7 +40,6 @@
           <Property Name="LastName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="Mobile" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
           <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="Image" Type="Binary" MaxLength="Max" FixedLength="false" />
         </EntityType>
         <EntityType Name="User">
           <Key>
@@ -69,7 +67,6 @@
                 <ScalarProperty Name="LastName" ColumnName="LastName" />
                 <ScalarProperty Name="Mobile" ColumnName="Mobile" />
                 <ScalarProperty Name="Email" ColumnName="Email" />
-                <ScalarProperty Name="Image" ColumnName="Image" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

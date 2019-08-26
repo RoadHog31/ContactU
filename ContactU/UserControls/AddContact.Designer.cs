@@ -74,7 +74,7 @@
             // btnCancel
             // 
             this.btnCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancel.Location = new System.Drawing.Point(6, 365);
+            this.btnCancel.Location = new System.Drawing.Point(3, 368);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(75, 40);
             this.btnCancel.TabIndex = 1;
@@ -84,7 +84,7 @@
             // btnSave
             // 
             this.btnSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSave.Location = new System.Drawing.Point(181, 365);
+            this.btnSave.Location = new System.Drawing.Point(181, 368);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(75, 40);
             this.btnSave.TabIndex = 1;
@@ -157,7 +157,7 @@
             this.Controls.Add(this.txtBoxLastName);
             this.Controls.Add(this.txtBoxFirstName);
             this.Name = "AddContact";
-            this.Size = new System.Drawing.Size(259, 408);
+            this.Size = new System.Drawing.Size(259, 411);
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -34,19 +34,17 @@ namespace ContactU
             this.txtBoxPeopleSearch = new System.Windows.Forms.TextBox();
             this.lblContactTitle = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnMinimize = new System.Windows.Forms.Button();
+            this.btnMaximize = new System.Windows.Forms.Button();
+            this.btnExit = new System.Windows.Forms.Button();
             this.listView1 = new System.Windows.Forms.ListView();
             this.FirstName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.LastName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.listView2 = new System.Windows.Forms.ListView();
             this.btnEllipsis = new System.Windows.Forms.Button();
             this.btnAddContact = new System.Windows.Forms.Button();
-            this.btnMinimize = new System.Windows.Forms.Button();
-            this.btnMaximize = new System.Windows.Forms.Button();
-            this.btnExit = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.addContact1 = new ContactU.UserControls.AddContact();
             this.panel1.SuspendLayout();
-            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // peopleTitlelbl
@@ -89,6 +87,41 @@ namespace ContactU
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(700, 66);
             this.panel1.TabIndex = 5;
+            // 
+            // btnMinimize
+            // 
+            this.btnMinimize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMinimize.ForeColor = System.Drawing.SystemColors.MenuHighlight;
+            this.btnMinimize.Image = global::ContactU.Properties.Resources.icons8_minimize_window_30px;
+            this.btnMinimize.Location = new System.Drawing.Point(230, 1);
+            this.btnMinimize.Name = "btnMinimize";
+            this.btnMinimize.Size = new System.Drawing.Size(42, 36);
+            this.btnMinimize.TabIndex = 4;
+            this.btnMinimize.UseVisualStyleBackColor = true;
+            // 
+            // btnMaximize
+            // 
+            this.btnMaximize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMaximize.ForeColor = System.Drawing.SystemColors.MenuHighlight;
+            this.btnMaximize.Image = global::ContactU.Properties.Resources.icons8_maximize_window_30px;
+            this.btnMaximize.Location = new System.Drawing.Point(266, 1);
+            this.btnMaximize.Name = "btnMaximize";
+            this.btnMaximize.Size = new System.Drawing.Size(42, 36);
+            this.btnMaximize.TabIndex = 4;
+            this.btnMaximize.UseVisualStyleBackColor = true;
+            // 
+            // btnExit
+            // 
+            this.btnExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnExit.ForeColor = System.Drawing.SystemColors.MenuHighlight;
+            this.btnExit.Image = global::ContactU.Properties.Resources.icons8_macos_close_30px;
+            this.btnExit.Location = new System.Drawing.Point(301, 1);
+            this.btnExit.Name = "btnExit";
+            this.btnExit.Size = new System.Drawing.Size(42, 36);
+            this.btnExit.TabIndex = 4;
+            this.btnExit.UseVisualStyleBackColor = true;
+            this.btnExit.MouseEnter += new System.EventHandler(this.BtnExit_MouseEnter);
+            this.btnExit.MouseLeave += new System.EventHandler(this.BtnExit_MouseLeave);
             // 
             // listView1
             // 
@@ -146,55 +179,12 @@ namespace ContactU
             this.btnAddContact.UseVisualStyleBackColor = true;
             this.btnAddContact.Click += new System.EventHandler(this.BtnAddContact_Click);
             // 
-            // btnMinimize
-            // 
-            this.btnMinimize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMinimize.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.btnMinimize.Image = global::ContactU.Properties.Resources.icons8_minimize_window_30px;
-            this.btnMinimize.Location = new System.Drawing.Point(230, 1);
-            this.btnMinimize.Name = "btnMinimize";
-            this.btnMinimize.Size = new System.Drawing.Size(42, 36);
-            this.btnMinimize.TabIndex = 4;
-            this.btnMinimize.UseVisualStyleBackColor = true;
-            // 
-            // btnMaximize
-            // 
-            this.btnMaximize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMaximize.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.btnMaximize.Image = global::ContactU.Properties.Resources.icons8_maximize_window_30px;
-            this.btnMaximize.Location = new System.Drawing.Point(266, 1);
-            this.btnMaximize.Name = "btnMaximize";
-            this.btnMaximize.Size = new System.Drawing.Size(42, 36);
-            this.btnMaximize.TabIndex = 4;
-            this.btnMaximize.UseVisualStyleBackColor = true;
-            // 
-            // btnExit
-            // 
-            this.btnExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnExit.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.btnExit.Image = global::ContactU.Properties.Resources.icons8_macos_close_30px;
-            this.btnExit.Location = new System.Drawing.Point(301, 1);
-            this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(42, 36);
-            this.btnExit.TabIndex = 4;
-            this.btnExit.UseVisualStyleBackColor = true;
-            this.btnExit.MouseEnter += new System.EventHandler(this.BtnExit_MouseEnter);
-            this.btnExit.MouseLeave += new System.EventHandler(this.BtnExit_MouseLeave);
-            // 
             // panel2
             // 
-            this.panel2.Controls.Add(this.addContact1);
             this.panel2.Location = new System.Drawing.Point(362, 72);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(338, 785);
             this.panel2.TabIndex = 8;
-            // 
-            // addContact1
-            // 
-            this.addContact1.Location = new System.Drawing.Point(15, 6);
-            this.addContact1.Name = "addContact1";
-            this.addContact1.Size = new System.Drawing.Size(311, 438);
-            this.addContact1.TabIndex = 0;
             // 
             // PeopleForm
             // 
@@ -218,7 +208,6 @@ namespace ContactU
             this.Text = "People";
             this.Load += new System.EventHandler(this.PeopleForm_Load);
             this.panel1.ResumeLayout(false);
-            this.panel2.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -241,7 +230,6 @@ namespace ContactU
         private System.Windows.Forms.ColumnHeader LastName;
         private System.Windows.Forms.ListView listView2;
         private System.Windows.Forms.Panel panel2;
-        private UserControls.AddContact addContact1;
     }
 }
 

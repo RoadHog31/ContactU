@@ -42,6 +42,7 @@
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.DirectoryServices" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
     <Reference Include="System.Xml.Linq" />
@@ -88,6 +89,7 @@
     <Compile Include="Models\User.cs">
       <DependentUpon>ContactUDBContext.tt</DependentUpon>
     </Compile>
+    <Compile Include="UserControls\UCAddContacts.cs" />
     <Compile Include="UserControls\DeleteContact.cs">
       <SubType>UserControl</SubType>
     </Compile>

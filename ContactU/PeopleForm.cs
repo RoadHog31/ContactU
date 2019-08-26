@@ -26,6 +26,7 @@ namespace ContactU
             get { return p_addcontactpresenter; }
         }
 
+        //Text typed into the seach field textbox on UI. 
         public string SearchName
         {
             set
@@ -62,7 +63,6 @@ namespace ContactU
 
             //Event worked fine.
             //this.Click += new System.EventHandler(UpdateFormTitleWithDateTime);
-
         }
 
         private void BtnExit_MouseEnter(object sender, EventArgs e)
@@ -127,6 +127,8 @@ namespace ContactU
 
         private void BtnAddContact_Click(object sender, EventArgs e)
         {
+            editContact1.Hide();
+            deleteContact1.Hide();
             this.Size = new System.Drawing.Size(695, 900);
             addContact1.BringToFront();
             addContact1.Visible = true;            

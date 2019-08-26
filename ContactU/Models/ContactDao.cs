@@ -17,8 +17,7 @@ namespace ContactU.Models
     ///should supply a mechanism to allow multiple Views to observe its data.
     /// </summary>
     public class ContactDao : IContactDao
-    {
-        
+    {        
         //private ContactDataMapper _contactDataMapper;
         //private List<Contact> c_AllContacts;
 
@@ -42,8 +41,7 @@ namespace ContactU.Models
                     var p_AllContacts = c_AllContacts;
 
                     return p_AllContacts;
-                }
-                
+                }                
             }
             catch (SqlException sqlex)
             {

@@ -13,15 +13,18 @@ namespace ContactU.Presenters
     public class AddContactPresenter
     {
         private IContactDao _contactDao;        
-        private IAddContactView _peopleForm;        
+        private IPeopleForm _peopleForm;
+        private PeopleForm peopleForm;
+        private ContactDao contactDao;
 
-        public AddContactPresenter(IAddContactView peopleFormView, 
+        public AddContactPresenter(IPeopleForm peopleFormView, 
                                     IContactDao contactDao)
         {
             _peopleForm = peopleFormView;
             _contactDao = contactDao;
-        }        
+        }
 
+        
         //This accesses method from ContactDao model and passes to the view for binding.
         public void InitialiseViewData()
         {
@@ -31,7 +34,7 @@ namespace ContactU.Presenters
             {
                 foreach (Contact contact in contacts)
                 {
-                    _peopleForm.AddContactToListView(contact);
+                    _peopleForm.AddAllContactsToListView(contact);
                 }
             }
             else

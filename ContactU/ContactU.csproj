@@ -60,6 +60,8 @@
   <ItemGroup>
     <Compile Include="Interfaces\IContactDao.cs" />
     <Compile Include="Interfaces\IAddContactView.cs" />
+    <Compile Include="Interfaces\IDeleteContactView.cs" />
+    <Compile Include="Interfaces\IEditContactView.cs" />
     <Compile Include="Interfaces\IPeopleForm.cs" />
     <Compile Include="Models\Contact.cs">
       <DependentUpon>ContactUDBContext.tt</DependentUpon>
@@ -94,7 +96,6 @@
     <Compile Include="Models\User.cs">
       <DependentUpon>ContactUDBContext.tt</DependentUpon>
     </Compile>
-    <Compile Include="UserControls\UCAddContacts.cs" />
     <Compile Include="UserControls\DeleteContact.cs">
       <SubType>UserControl</SubType>
     </Compile>

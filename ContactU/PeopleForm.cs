@@ -124,6 +124,15 @@ namespace ContactU
             //addContact1.BringToFront();
             //addContact1.Visible = true;            
         }
-        
+
+        public void RefreshAllContactsToListView(Contact m_contact)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void AddContactToListView(Contact contact)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

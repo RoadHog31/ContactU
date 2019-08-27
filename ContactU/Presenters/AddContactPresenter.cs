@@ -13,9 +13,7 @@ namespace ContactU.Presenters
     public class AddContactPresenter
     {
         private IContactDao _contactDao;        
-        private IPeopleForm _peopleForm;
-        private PeopleForm peopleForm;
-        private ContactDao contactDao;
+        private IPeopleForm _peopleForm;        
 
         public AddContactPresenter(IPeopleForm peopleFormView, 
                                     IContactDao contactDao)

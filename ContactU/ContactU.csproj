@@ -22,6 +22,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <LangVersion>8.0</LangVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -31,6 +32,7 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <LangVersion>8.0</LangVersion>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
@@ -57,7 +59,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Interfaces\IContactDao.cs" />
-    <Compile Include="Interfaces\IAddPeopleFormView.cs" />
+    <Compile Include="Interfaces\IAddContactView.cs" />
+    <Compile Include="Interfaces\IPeopleForm.cs" />
     <Compile Include="Models\Contact.cs">
       <DependentUpon>ContactUDBContext.tt</DependentUpon>
     </Compile>
@@ -84,6 +87,8 @@
       <DependentUpon>PeopleForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Presenters\AddContactPresenter.cs" />
+    <Compile Include="Presenters\DeleteContactPresenter.cs" />
+    <Compile Include="Presenters\EditContactPresenter.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Models\User.cs">

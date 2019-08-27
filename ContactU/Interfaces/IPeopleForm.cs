@@ -7,12 +7,10 @@ using System.Threading.Tasks;
 
 namespace ContactU.Interfaces
 {
-    public interface IAddPeopleFormView
+    public interface IPeopleForm
     {
-        string SearchName { set; }
-
-        Contact ContactToAdd { get; }
-
-        void AddContactToListView(Contact m_contact);
+        void AddAllContactsToListView(Contact m_contact);       
+        
     }
+       
 }

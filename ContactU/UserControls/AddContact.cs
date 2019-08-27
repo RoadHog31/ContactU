@@ -1,20 +1,37 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Drawing;
-using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+using ContactU.Interfaces;
+using ContactU.Models;
+using ContactU.Presenters;
 
 namespace ContactU.UserControls
 {
-    public partial class AddContact : UserControl
+    public partial class AddContact : UserControl, IAddContactView
     {
+        private readonly ContactDao m_contactDao;
+        private AddContactPresenter p_addcontactpresenter;
+        //private List<Contact> m_allContacts;
+
         public AddContact()
         {
             InitializeComponent();
+        }       
+
+        public Contact ContactToAdd => throw new NotImplementedException();
+
+
+        //Presenter object created.
+        public AddContactPresenter Presenter
+        {
+            get { return p_addcontactpresenter; }
+        }
+
+        //Takes Initialisation data from Presenter InitView Method...
+        // and passes it to the ListView control. 
+        public void AddContactToListView(Contact m_contact)
+        {
+            
+
         }
 
        

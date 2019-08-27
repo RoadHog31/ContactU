@@ -13,14 +13,14 @@ namespace ContactU.Presenters
     public class AddContactPresenter
     {
         private IContactDao _contactDao;        
-        private IAddPeopleFormView _peopleForm;
+        private IAddContactView _peopleForm;        
 
-        public AddContactPresenter(IAddPeopleFormView peopleFormView, 
+        public AddContactPresenter(IAddContactView peopleFormView, 
                                     IContactDao contactDao)
         {
-            this._peopleForm = peopleFormView;
-            this._contactDao = contactDao;
-        }
+            _peopleForm = peopleFormView;
+            _contactDao = contactDao;
+        }        
 
         //This accesses method from ContactDao model and passes to the view for binding.
         public void InitialiseViewData()

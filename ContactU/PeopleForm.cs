@@ -1,5 +1,5 @@
-﻿using ContactU.Interfaces;
-using ContactU.Models;
+﻿using ContactU.Models;
+using ContactU.Interfaces;
 using ContactU.Presenters;
 using System;
 using System.Drawing;
@@ -14,7 +14,7 @@ namespace ContactU
     ///The View creates the Presenter, it lives as long as it's visible to the front 
     ///end user.
     /// </summary>
-    public partial class PeopleForm : Form, IAddPeopleFormView
+    public partial class PeopleForm : Form, IPeopleForm
     {
         private readonly ContactDao m_contactDao;
         private AddContactPresenter p_addcontactpresenter;
@@ -35,23 +35,13 @@ namespace ContactU
             }
         }
 
-        public Contact ContactToAdd => throw new NotImplementedException();
-
-        //public Contact ContactToAdd
-        //{
-        //    get
-        //    {
-        //       new Contact() ;
-        //    }
-        //}
-
         //Generic Constructor all form to initially start up...
         public PeopleForm()
         {
             InitializeComponent();
         }
 
-        //Overload Constructor
+        //Overloaded Constructor takes in a Model layer object.
         public PeopleForm(ContactDao contactDao)
         {
             InitializeComponent();
@@ -65,11 +55,13 @@ namespace ContactU
             //this.Click += new System.EventHandler(UpdateFormTitleWithDateTime);
         }
 
+        //Search text box placeholder UI changes.
         private void BtnExit_MouseEnter(object sender, EventArgs e)
         {
             btnExit.BackColor = Color.Red;
         }
 
+        //Search text box placeholder UI changes.
         private void BtnExit_MouseLeave(object sender, EventArgs e)
         {
             btnExit.BackColor = Color.Blue;
@@ -77,11 +69,10 @@ namespace ContactU
 
         //Takes Initialisation data from Presenter InitView Method...
         // and passes it to the ListView control. 
-        public void AddContactToListView(Contact m_contact)
+        public void AddAllContactsToListView(Contact m_contact)
         {
             listView1.Items.Add(m_contact.FirstName);
-            listView1.Items.Add(m_contact.LastName);
-            //grglistView1.Items.Add(Convert.ToBase64String(m_contact.Image));
+            listView1.Items.Add(m_contact.LastName);          
             
         }
 
@@ -92,8 +83,8 @@ namespace ContactU
             txtBoxPeopleSearch.ForeColor = Color.DarkGray;
             //this.Click += new System.EventHandler(UpdateFormTitleWithDateTime);
 
-            addContact1.SendToBack();
-            addContact1.Hide();
+            //addContact1.SendToBack();
+            //addContact1.Hide();
 
             //Event Test...
             //Text = "Testing!!!!" + DateTime.Now;        
@@ -127,11 +118,12 @@ namespace ContactU
 
         private void BtnAddContact_Click(object sender, EventArgs e)
         {
-            editContact1.Hide();
-            deleteContact1.Hide();
+            //editContact1.Hide();
+            //deleteContact1.Hide();
             this.Size = new System.Drawing.Size(695, 900);
-            addContact1.BringToFront();
-            addContact1.Visible = true;            
+            //addContact1.BringToFront();
+            //addContact1.Visible = true;            
         }
+        
     }
 }

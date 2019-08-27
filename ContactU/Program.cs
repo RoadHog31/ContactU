@@ -1,4 +1,5 @@
 ﻿using ContactU.Models;
+using ContactU.UserControls;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -19,7 +20,7 @@ namespace ContactU
             Application.SetCompatibleTextRenderingDefault(false);
             ContactDao contactDao = new ContactDao();
             PeopleForm peopleForm = new PeopleForm(contactDao);
-            peopleForm.Width = 355;            
+            peopleForm.Width = 355;
             peopleForm.Presenter.InitialiseViewData();
             Application.Run(peopleForm);           
             

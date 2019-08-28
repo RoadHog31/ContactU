@@ -44,7 +44,9 @@ namespace ContactU
             this.btnEllipsis = new System.Windows.Forms.Button();
             this.btnAddContact = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.addContact1 = new ContactU.UserControls.AddContact();
             this.panel1.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // peopleTitlelbl
@@ -181,10 +183,18 @@ namespace ContactU
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.addContact1);
             this.panel2.Location = new System.Drawing.Point(362, 72);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(338, 785);
             this.panel2.TabIndex = 8;
+            // 
+            // addContact1
+            // 
+            this.addContact1.Location = new System.Drawing.Point(16, 3);
+            this.addContact1.Name = "addContact1";
+            this.addContact1.Size = new System.Drawing.Size(310, 416);
+            this.addContact1.TabIndex = 0;
             // 
             // PeopleForm
             // 
@@ -208,6 +218,7 @@ namespace ContactU
             this.Text = "People";
             this.Load += new System.EventHandler(this.PeopleForm_Load);
             this.panel1.ResumeLayout(false);
+            this.panel2.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -230,6 +241,7 @@ namespace ContactU
         private System.Windows.Forms.ColumnHeader LastName;
         private System.Windows.Forms.ListView listView2;
         private System.Windows.Forms.Panel panel2;
+        private UserControls.AddContact addContact1;
     }
 }
 

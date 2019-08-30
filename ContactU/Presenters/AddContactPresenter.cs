@@ -40,5 +40,20 @@ namespace ContactU.Presenters
                 return;
             }            
         }
+
+        /// <summary>
+        /// Called by the view; this grabs the updated contact from the view and commits it to the DB.
+        /// </summary>
+        public void AddContact() 
+        { 
+        }
+
+        // <summary>
+        /// Checks if a contact already exists with the same contact ID.
+        /// </summary>
+        private bool IsContactinDatabase(Contact contact)
+        {
+            return false;
+        }
     }
 }

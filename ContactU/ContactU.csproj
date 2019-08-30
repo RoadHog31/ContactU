@@ -120,6 +120,9 @@
     <Compile Include="UserControls\AddContact.Designer.cs">
       <DependentUpon>AddContact.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="UserControls\YesNoModel.resx">
+      <DependentUpon>YesNoModel.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\PeopleForm.resx">
       <DependentUpon>PeopleForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -165,6 +168,9 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
+    <Content Include="Images\icons8_details_popup_32px_1.png" />
+    <Content Include="Images\icons8_replace_32px.png" />
+    <Content Include="Images\icons8_replace_32px_1.png" />
     <Content Include="Models\ContactUDBContext.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>ContactUDBContext.Context.cs</LastGenOutput>

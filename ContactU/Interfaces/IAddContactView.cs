@@ -4,10 +4,9 @@ namespace ContactU.Interfaces
 {
     public interface IAddContactView
     {       
-        Contact ContactToAdd { get; }
+        Contact ContactToAdd { set; }
 
-        void AddContactToListView(Contact m_contact);       
-
+        void AddContactToListView(Contact m_contact); 
 
     }
 }

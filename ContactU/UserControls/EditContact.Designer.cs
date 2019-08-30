@@ -94,10 +94,10 @@
             // lblTitleAddContact
             // 
             this.lblTitleAddContact.AutoSize = true;
-            this.lblTitleAddContact.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitleAddContact.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTitleAddContact.Location = new System.Drawing.Point(3, 36);
             this.lblTitleAddContact.Name = "lblTitleAddContact";
-            this.lblTitleAddContact.Size = new System.Drawing.Size(122, 24);
+            this.lblTitleAddContact.Size = new System.Drawing.Size(109, 20);
             this.lblTitleAddContact.TabIndex = 2;
             this.lblTitleAddContact.Text = "Edit Contact";
             // 

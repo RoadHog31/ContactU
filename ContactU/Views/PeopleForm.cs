@@ -122,7 +122,9 @@ namespace ContactU
             //deleteContact1.Hide();
             this.Size = new System.Drawing.Size(695, 900);
             //addContact1.BringToFront();
-            //addContact1.Visible = true;            
+            //addContact1.Visible = true; 
+            
+            
         }
 
         public void RefreshAllContactsToListView(Contact m_contact)
@@ -134,5 +136,7 @@ namespace ContactU
         {
             throw new NotImplementedException();
         }
+
+      
     }
 }

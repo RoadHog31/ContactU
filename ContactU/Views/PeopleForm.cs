@@ -118,6 +118,8 @@ namespace ContactU
 
         private void BtnAddContact_Click(object sender, EventArgs e)
         {
+            btnEdit.Hide();
+            btnEdit.SendToBack();
             //editContact1.Hide();
             //deleteContact1.Hide();
             this.Size = new System.Drawing.Size(695, 900);
@@ -137,6 +139,10 @@ namespace ContactU
             throw new NotImplementedException();
         }
 
-      
+
+        private void BtnEditContact_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

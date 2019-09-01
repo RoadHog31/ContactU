@@ -35,7 +35,7 @@ namespace ContactU
             }
         }
 
-        //Generic Constructor all form to initially start up...
+        //Generic Constructor to initialise the app main view...
         public PeopleForm()
         {
             InitializeComponent();

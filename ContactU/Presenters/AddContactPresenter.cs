@@ -13,13 +13,14 @@ namespace ContactU.Presenters
     public class AddContactPresenter
     {
         private IContactDao _contactDao;        
-        private IPeopleForm _peopleForm;        
+        private IPeopleForm _peopleForm;
+        private IAddContactView addContactView;
 
         public AddContactPresenter(IPeopleForm peopleFormView, 
                                     IContactDao contactDao)
         {
             _peopleForm = peopleFormView;
-            _contactDao = contactDao;
+            _contactDao = contactDao;            
         }
 
         
@@ -44,8 +45,11 @@ namespace ContactU.Presenters
         /// <summary>
         /// Called by the view; this grabs the updated contact from the view and commits it to the DB.
         /// </summary>
-        public void AddContact() 
-        { 
+        public void AddContact(int id, string firstName, string LastName, string Mobile, string email) 
+        {
+            _contactDao.Save();
+
+
         }
 
         // <summary>

@@ -58,6 +58,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Interfaces\IClear.cs" />
     <Compile Include="Interfaces\IContactDao.cs" />
     <Compile Include="Interfaces\IAddContactView.cs" />
     <Compile Include="Interfaces\IDeleteContactView.cs" />

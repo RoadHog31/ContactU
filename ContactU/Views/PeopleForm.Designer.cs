@@ -42,11 +42,11 @@ namespace ContactU
             this.LastName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.listView2 = new System.Windows.Forms.ListView();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.addContact1 = new ContactU.UserControls.AddContact();
             this.panel3 = new System.Windows.Forms.Panel();
             this.btnEdit = new System.Windows.Forms.Button();
             this.btnEllipsis = new System.Windows.Forms.Button();
             this.btnAddContact = new System.Windows.Forms.Button();
-            this.addContact1 = new ContactU.UserControls.AddContact();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -140,16 +140,16 @@ namespace ContactU
             this.listView1.Sorting = System.Windows.Forms.SortOrder.Ascending;
             this.listView1.TabIndex = 6;
             this.listView1.UseCompatibleStateImageBehavior = false;
-            this.listView1.View = System.Windows.Forms.View.SmallIcon;
+            this.listView1.View = System.Windows.Forms.View.List;
             // 
             // FirstName
             // 
-            this.FirstName.Text = "First Name";
+            this.FirstName.Text = global::ContactU.Properties.Settings.Default.FirstName;
             this.FirstName.Width = 100;
             // 
             // LastName
             // 
-            this.LastName.Text = "Last Name";
+            this.LastName.Text = global::ContactU.Properties.Settings.Default.LastName;
             this.LastName.Width = 100;
             // 
             // listView2
@@ -171,6 +171,13 @@ namespace ContactU
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(338, 900);
             this.panel2.TabIndex = 8;
+            // 
+            // addContact1
+            // 
+            this.addContact1.Location = new System.Drawing.Point(21, 212);            
+            this.addContact1.Name = "addContact1";
+            this.addContact1.Size = new System.Drawing.Size(305, 325);
+            this.addContact1.TabIndex = 5;
             // 
             // panel3
             // 
@@ -214,13 +221,6 @@ namespace ContactU
             this.btnAddContact.TabIndex = 4;
             this.btnAddContact.UseVisualStyleBackColor = true;
             this.btnAddContact.Click += new System.EventHandler(this.BtnAddContact_Click);
-            // 
-            // addContact1
-            // 
-            this.addContact1.Location = new System.Drawing.Point(21, 212);
-            this.addContact1.Name = "addContact1";
-            this.addContact1.Size = new System.Drawing.Size(305, 325);
-            this.addContact1.TabIndex = 5;
             // 
             // PeopleForm
             // 

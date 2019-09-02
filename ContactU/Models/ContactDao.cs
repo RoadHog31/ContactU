@@ -62,9 +62,32 @@ namespace ContactU.Models
             throw new NotImplementedException();
         }
 
-        public void Save(Contact p_contact)
+        //Save contact to the database. 
+        public void Save(int id, string firstName, string LastName, string Mobile, string email)
         {
-            throw new NotImplementedException();
+            try
+            {
+                using (ContactMiidbEntities contactMiidbEntities = new ContactMiidbEntities())
+                {
+                    var c_AllContacts = contactMiidbEntities.Contacts.ToList();
+
+                    var p_AllContacts = c_AllContacts;
+
+                   
+                }
+            }
+            catch (SqlException sqlex)
+            {
+                throw sqlex;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                GetAllContacts();
+            }
         }
     }
 

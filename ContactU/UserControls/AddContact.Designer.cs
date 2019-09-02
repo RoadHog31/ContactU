@@ -160,6 +160,7 @@
             this.Controls.Add(this.txtBoxFirstName);
             this.Name = "AddContact";
             this.Size = new System.Drawing.Size(262, 325);
+            this.Load += new System.EventHandler(this.AddContact_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

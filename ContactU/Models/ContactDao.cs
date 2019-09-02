@@ -69,9 +69,10 @@ namespace ContactU.Models
             {
                 using (ContactMiidbEntities contactMiidbEntities = new ContactMiidbEntities())
                 {
-                    var c_AllContacts = contactMiidbEntities.Contacts.ToList();
 
-                    var p_AllContacts = c_AllContacts;
+                   // contactMiidbEntities.Contacts;
+
+                    
 
                    
                 }

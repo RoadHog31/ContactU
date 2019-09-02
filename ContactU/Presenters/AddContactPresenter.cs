@@ -47,8 +47,7 @@ namespace ContactU.Presenters
         /// </summary>
         public void AddContact(int id, string firstName, string LastName, string Mobile, string email) 
         {
-            _contactDao.Save();
-
+            _contactDao.Save(id, firstName, LastName, Mobile, email);
 
         }
 

@@ -11,6 +11,7 @@ namespace ContactU.UserControls
         private readonly ContactDao m_contactDao;
         private AddContactPresenter p_addcontactpresenter;
         //private List<Contact> m_allContacts;
+        Contact contactModel;
 
         public AddContact()
         {
@@ -30,10 +31,19 @@ namespace ContactU.UserControls
         { 
             set 
             {
-              
+                new Contact txtBoxFirstName.Text;
                     
             } 
         }
+
+        private int myVar;
+
+        public int MyProperty
+        {
+            get { return myVar; }
+            set { myVar = value; }
+        }
+
 
         //Presenter object created.
         public AddContactPresenter Presenter

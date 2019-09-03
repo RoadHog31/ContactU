@@ -72,8 +72,11 @@ namespace ContactU
         public void AddAllContactsToListView(Contact m_contact)
         {
             listView1.Items.Add(m_contact.FirstName);
-            listView1.Items.Add(m_contact.LastName);          
+            listView1.Items.Add(m_contact.LastName);
+            listView1.Items.Add(m_contact.Mobile);
+            listView1.Items.Add(m_contact.Email);
             
+
         }
 
         private void PeopleForm_Load(object sender, EventArgs e)

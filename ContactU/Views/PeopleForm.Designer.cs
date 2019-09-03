@@ -38,8 +38,11 @@ namespace ContactU
             this.btnMaximize = new System.Windows.Forms.Button();
             this.btnExit = new System.Windows.Forms.Button();
             this.listView1 = new System.Windows.Forms.ListView();
+            this.ID = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.FirstName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.LastName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Mobile = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Email = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.listView2 = new System.Windows.Forms.ListView();
             this.panel2 = new System.Windows.Forms.Panel();
             this.addContact1 = new ContactU.UserControls.AddContact();
@@ -131,8 +134,11 @@ namespace ContactU
             // listView1
             // 
             this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.ID,
+            this.LastName,
             this.FirstName,
-            this.LastName});
+            this.Mobile,
+            this.Email});
             this.listView1.HideSelection = false;
             this.listView1.Location = new System.Drawing.Point(13, 141);
             this.listView1.Name = "listView1";
@@ -140,17 +146,32 @@ namespace ContactU
             this.listView1.Sorting = System.Windows.Forms.SortOrder.Ascending;
             this.listView1.TabIndex = 6;
             this.listView1.UseCompatibleStateImageBehavior = false;
-            this.listView1.View = System.Windows.Forms.View.List;
+            this.listView1.View = System.Windows.Forms.View.Details;
+            // 
+            // ID
+            // 
+            this.ID.Text = global::ContactU.Properties.Settings.Default.ID;
+            this.ID.Width = 29;
             // 
             // FirstName
             // 
+            this.FirstName.DisplayIndex = 2;
             this.FirstName.Text = global::ContactU.Properties.Settings.Default.FirstName;
-            this.FirstName.Width = 100;
+            this.FirstName.Width = 86;
             // 
             // LastName
             // 
+            this.LastName.DisplayIndex = 1;
             this.LastName.Text = global::ContactU.Properties.Settings.Default.LastName;
             this.LastName.Width = 100;
+            // 
+            // Mobile
+            // 
+            this.Mobile.Text = global::ContactU.Properties.Settings.Default.Mobile;
+            // 
+            // Email
+            // 
+            this.Email.Text = global::ContactU.Properties.Settings.Default.Email;
             // 
             // listView2
             // 
@@ -174,7 +195,12 @@ namespace ContactU
             // 
             // addContact1
             // 
-            this.addContact1.Location = new System.Drawing.Point(21, 212);            
+            this.addContact1.ContactID = 0;
+            this.addContact1.Email = "";
+            this.addContact1.FirstName = "";
+            this.addContact1.LastName = "";
+            this.addContact1.Location = new System.Drawing.Point(21, 212);
+            this.addContact1.Mobile = "";
             this.addContact1.Name = "addContact1";
             this.addContact1.Size = new System.Drawing.Size(305, 325);
             this.addContact1.TabIndex = 5;
@@ -263,13 +289,16 @@ namespace ContactU
         private System.Windows.Forms.Button btnMaximize;
         private System.Windows.Forms.Button btnExit;
         private System.Windows.Forms.ListView listView1;
-        private System.Windows.Forms.ColumnHeader FirstName;
         private System.Windows.Forms.ColumnHeader LastName;
         private System.Windows.Forms.ListView listView2;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Button btnEdit;
         private UserControls.AddContact addContact1;
+        private System.Windows.Forms.ColumnHeader FirstName;
+        private System.Windows.Forms.ColumnHeader Mobile;
+        private System.Windows.Forms.ColumnHeader Email;
+        private System.Windows.Forms.ColumnHeader ID;
     }
 }
 

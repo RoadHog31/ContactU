@@ -63,7 +63,7 @@ namespace ContactU.Models
         }
 
         //Save contact to the database. 
-        public void Save(int id, string firstName, string LastName, string Mobile, string email)
+        public void Save(Contact contact)
         {
             try
             {
@@ -90,7 +90,5 @@ namespace ContactU.Models
                 GetAllContacts();
             }
         }
-    }
-
-    
+    }    
 }

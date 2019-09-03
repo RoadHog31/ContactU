@@ -10,7 +10,7 @@ namespace ContactU.Interfaces
     public interface IContactDao
     {
         List<Contact> GetAllContacts();
-        void Save(int id, string p_firstname, string p_lastname, string email, string mobile);
+        void Save(Contact contact);
         Contact GetByName(string p_firstname);
     }
 }

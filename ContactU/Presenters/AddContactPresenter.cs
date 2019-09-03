@@ -45,9 +45,9 @@ namespace ContactU.Presenters
         /// <summary>
         /// Called by the view; this grabs the updated contact from the view and commits it to the DB.
         /// </summary>
-        public void AddContact(int id, string firstName, string LastName, string Mobile, string email) 
+        public void AddContact(Contact contact) 
         {
-            _contactDao.Save(id, firstName, LastName, Mobile, email);
+            _contactDao.Save(contact);
 
         }
 

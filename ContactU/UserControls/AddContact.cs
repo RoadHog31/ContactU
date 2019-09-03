@@ -12,18 +12,18 @@ namespace ContactU.UserControls
         private AddContactPresenter p_addcontactpresenter;
 
         //private List<Contact> m_allContacts;
-        //private Contact contactModel;
+        Contact contactModel = new Contact();
 
         //First Name property used for binding. 
         private string _firstName;
         public string FirstName
         {
-            get { return _firstName; }
+            get { return contactModel.FirstName; }
             set
             {
                 if (string.IsNullOrEmpty(txtBoxFirstName.Text) || string.IsNullOrWhiteSpace(txtBoxFirstName.Text))
                 {
-                    _firstName = txtBoxFirstName.Text;
+                    contactModel.FirstName = txtBoxFirstName.Text.Trim();
                 }
             }
         }
@@ -37,7 +37,7 @@ namespace ContactU.UserControls
             {
                 if (string.IsNullOrEmpty(txtBoxLastName.Text) || string.IsNullOrWhiteSpace(txtBoxLastName.Text))
                 {
-                    _lastName = txtBoxFirstName.Text;
+                    contactModel.LastName = txtBoxLastName.Text.Trim(); 
                 }
             }
         }
@@ -51,7 +51,7 @@ namespace ContactU.UserControls
             {
                 if (string.IsNullOrEmpty(txtBoxEmail.Text) || string.IsNullOrWhiteSpace(txtBoxEmail.Text))
                 {
-                    _email = txtBoxEmail.Text;
+                    contactModel.Email = txtBoxEmail.Text.Trim(); 
                 }
             }
         }
@@ -65,7 +65,7 @@ namespace ContactU.UserControls
             {
                 if (string.IsNullOrEmpty(txtBoxMobile.Text) || string.IsNullOrWhiteSpace(txtBoxMobile.Text))
                 {
-                    _mobile = txtBoxEmail.Text;
+                    contactModel.Mobile = txtBoxMobile.Text.Trim();
                 }
             }
         }
@@ -76,24 +76,27 @@ namespace ContactU.UserControls
         {
             get { return _ID; }
             set {
-                if (value > -1)
-                {
-                    _ID = value;
-                }
-                             
+                    if (value > -1)
+                    {
+                        _ID = value;
+                    }                             
                 }
         }
 
+        //Generic Constructor
         public AddContact()
         {
             InitializeComponent();
         }
 
+        //Override Constructor
         public AddContact(Contact contact)
         {
-           // this.contactModel = contact;
+            InitializeComponent();
+            // this.contactModel = contact;
         }
 
+        //Override Constructor
         public AddContact(ContactDao contactDao, AddContactPresenter addContactPresenter)
         {
             InitializeComponent();
@@ -115,12 +118,13 @@ namespace ContactU.UserControls
         public void AddContactToListView()
         {
             //Presenter object used. 
-            p_addcontactpresenter.AddContact(_ID, _firstName, _lastName, _mobile, _email);
+            //p_addcontactpresenter.AddContact();
         }
 
         private void BtnSave_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Test Save");
+            
+            p_addcontactpresenter.AddContact(contactModel);
             
         }
 
@@ -130,13 +134,12 @@ namespace ContactU.UserControls
         }
 
         public void Clear()
-        {        
-           
+        {                   
             txtBoxFirstName.Text = "";
             txtBoxLastName.Text = "";
             txtBoxMobile.Text = "";
-            txtBoxEmail.Text = "";          
-
+            txtBoxEmail.Text = "";
+            contactModel.ContactId = 0;
         }
 
         private void AddContact_Load(object sender, EventArgs e)

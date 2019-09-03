@@ -8,5 +8,14 @@
     <Setting Name="LastName" Type="System.String" Scope="User">
       <Value Profile="(Default)">Last Name</Value>
     </Setting>
+    <Setting Name="ID" Type="System.String" Scope="User">
+      <Value Profile="(Default)">ID</Value>
+    </Setting>
+    <Setting Name="Mobile" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Mobile</Value>
+    </Setting>
+    <Setting Name="Email" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Email</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

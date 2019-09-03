@@ -11,78 +11,8 @@ namespace ContactU.UserControls
         private readonly ContactDao m_contactDao;
         private AddContactPresenter p_addcontactpresenter;
 
-        //private List<Contact> m_allContacts;
-        Contact contactModel = new Contact();
-
-        //First Name property used for binding. 
-        private string _firstName;
-        public string FirstName
-        {
-            get { return contactModel.FirstName; }
-            set
-            {
-                if (string.IsNullOrEmpty(txtBoxFirstName.Text) || string.IsNullOrWhiteSpace(txtBoxFirstName.Text))
-                {
-                    contactModel.FirstName = txtBoxFirstName.Text.Trim();
-                }
-            }
-        }
-
-        //Last Name property used for binding. 
-        private string _lastName;
-        public string LastName
-        {
-            get { return _lastName; }
-            set
-            {
-                if (string.IsNullOrEmpty(txtBoxLastName.Text) || string.IsNullOrWhiteSpace(txtBoxLastName.Text))
-                {
-                    contactModel.LastName = txtBoxLastName.Text.Trim(); 
-                }
-            }
-        }
-
-        //Last Name property used for binding. 
-        private string _email;
-        public string Email
-        {
-            get { return _email; }
-            set
-            {
-                if (string.IsNullOrEmpty(txtBoxEmail.Text) || string.IsNullOrWhiteSpace(txtBoxEmail.Text))
-                {
-                    contactModel.Email = txtBoxEmail.Text.Trim(); 
-                }
-            }
-        }
-
-        //Last Name property used for binding. 
-        private string _mobile;
-        public string Mobile
-        {
-            get { return _mobile; }
-            set
-            {
-                if (string.IsNullOrEmpty(txtBoxMobile.Text) || string.IsNullOrWhiteSpace(txtBoxMobile.Text))
-                {
-                    contactModel.Mobile = txtBoxMobile.Text.Trim();
-                }
-            }
-        }
-
-        //ID property used for binding. 
-        private int _ID;
-        public int ContactID
-        {
-            get { return _ID; }
-            set {
-                    if (value > -1)
-                    {
-                        _ID = value;
-                    }                             
-                }
-        }
-
+        Contact contactModel = new Contact();                 
+       
         //Generic Constructor
         public AddContact()
         {
@@ -123,9 +53,30 @@ namespace ContactU.UserControls
 
         private void BtnSave_Click(object sender, EventArgs e)
         {
-            
-            p_addcontactpresenter.AddContact(contactModel);
-            
+            if (!string.IsNullOrEmpty(txtBoxFirstName.Text) || !string.IsNullOrWhiteSpace(txtBoxFirstName.Text))
+            {
+                contactModel.FirstName = txtBoxFirstName.Text.Trim();
+            }
+            if (!string.IsNullOrEmpty(txtBoxLastName.Text) || !string.IsNullOrWhiteSpace(txtBoxLastName.Text))
+            {
+                contactModel.LastName = txtBoxLastName.Text.Trim();
+            }
+            if (!string.IsNullOrEmpty(txtBoxEmail.Text) || !string.IsNullOrWhiteSpace(txtBoxEmail.Text))
+            {
+                contactModel.Email = txtBoxEmail.Text.Trim();
+            }
+            if (!string.IsNullOrEmpty(txtBoxMobile.Text) || !string.IsNullOrWhiteSpace(txtBoxMobile.Text))
+            {
+                contactModel.Mobile = txtBoxMobile.Text.Trim();
+            }
+            if (contactModel != null)
+            {
+                p_addcontactpresenter.AddContact(contactModel);
+            }
+            else
+            {
+                return;
+            }               
         }
 
         private void BtnCancel_Click(object sender, EventArgs e)
@@ -139,6 +90,7 @@ namespace ContactU.UserControls
             txtBoxLastName.Text = "";
             txtBoxMobile.Text = "";
             txtBoxEmail.Text = "";
+            //Id initially set to 0 so we do ot need to add this. 
             contactModel.ContactId = 0;
         }
 

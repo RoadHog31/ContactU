@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Linq;
+using System.Windows.Forms;
 
 namespace ContactU.Models
 {
@@ -69,12 +70,8 @@ namespace ContactU.Models
             {
                 using (ContactMiidbEntities contactMiidbEntities = new ContactMiidbEntities())
                 {
-
-                   // contactMiidbEntities.Contacts;
-
-                    
-
-                   
+                   contactMiidbEntities.Contacts.Add(contact);
+                   contactMiidbEntities.SaveChanges();                   
                 }
             }
             catch (SqlException sqlex)
@@ -87,7 +84,8 @@ namespace ContactU.Models
             }
             finally
             {
-                GetAllContacts();
+                MessageBox.Show("Added Succesfully!");
+                //GetAllContacts();
             }
         }
     }    
